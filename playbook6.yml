@@ -1,0 +1,20 @@
+---
+- name: Create user and copy files into users home dir
+  hosts: all
+  tasks:
+    - name: Create user
+      user:
+        name: Zabi
+        password: bhaijaan
+        home: /tmp/Zabi
+        uid: 9090
+        comment: "A super user"
+    - name: Copy file into users home dir
+      copy:
+        src: /home/ubuntu/tomcat-users.xml
+        dest: /tmp/Zabi
+        owner: Zabi
+        group: Ayesha
+        mode: 0750
+
+...

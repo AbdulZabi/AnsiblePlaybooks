@@ -1,0 +1,16 @@
+---
+- name: Create user on all the servers
+  hosts: all
+  gather_facts: false
+  become: yes
+  tasks:
+    - name: User creation
+      user: 
+        name: Ayesha
+        password: crazy
+        uid: 8989
+        home: /tmp/Ayesha
+        shell: /bin/bash
+        comment: "A beautiful user"
+
+...
