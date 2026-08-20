@@ -1,0 +1,8 @@
+---
+- name: Install tree using package module on multiple flavours on linux
+  hosts: all
+  tasks:
+    - name: Install tree
+      package:
+        name: tree
+        state: present
